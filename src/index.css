@@ -3,3 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 75px;
+  border: 1px solid goldenrod;
+}

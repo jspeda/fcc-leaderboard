@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Leaderboard from './Leaderboard';
+import User from './User';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       users30: {},
-      usersAllTime: {}
+      usersAllTime: {},
+      month: true
     }
   }
 
@@ -31,13 +32,18 @@ class App extends Component {
         <div className="App-header">
           <h2>freeCodeCamp Leaderboard</h2>
         </div>
-        <p className="App-intro">
-          view all-time
-        </p>
-        <Leaderboard
-          topMonth={this.state.users30}
-          topAllTime={this.state.usersAllTime}
-        />
+        <div className="container">
+          <p className="App-intro">
+            view all-time
+          </p>
+          <ul className="list-of-users">
+            {
+              Object
+                .keys(this.state.users30)
+                .map(key => <User key={key} details={this.state.users30[key]} />)
+            }
+          </ul>
+        </div>
       </div>
     );
   }
