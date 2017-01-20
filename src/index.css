@@ -2,25 +2,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #c2c2c2;
+  background: #dddbdb;
 }
 
 
-.container {
+.list-of-users {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .user {
+  width: 50%;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
-  height: 75px;
-  border: 2px solid goldenrod;
+  border: 1px solid #006400;
   padding: 10px;
   margin: 15px;
 }

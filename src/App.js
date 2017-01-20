@@ -5,6 +5,7 @@ import User from './User';
 class App extends Component {
   constructor() {
     super();
+    this.toggleMonth = this.toggleMonth.bind(this);
     this.state = {
       users30: {},
       usersAllTime: {},
@@ -26,21 +27,27 @@ class App extends Component {
       .catch(err => console.error(err));
   }
 
+  toggleMonth() {
+    this.setState({month: !this.state.month});
+  }
+
   render() {
+    let choice = this.state.month ? this.state.users30 : this.state.usersAllTime;
     return (
       <div className="App">
         <div className="App-header">
           <h2>freeCodeCamp Leaderboard</h2>
         </div>
+        <button onClick={this.toggleMonth}><p className="App-intro">
+          view all-time
+        </p>
+        </button>
         <div className="container">
-          <p className="App-intro">
-            view all-time
-          </p>
           <ul className="list-of-users">
             {
               Object
-                .keys(this.state.users30)
-                .map(key => <User key={key} order={key} details={this.state.users30[key]} />)
+                .keys(choice)
+                .map(key => <User key={key} order={key} details={choice[key]} />)
             }
           </ul>
         </div>
