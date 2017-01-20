@@ -40,7 +40,7 @@ class App extends Component {
             {
               Object
                 .keys(this.state.users30)
-                .map(key => <User key={key} details={this.state.users30[key]} />)
+                .map(key => <User key={key} order={key} details={this.state.users30[key]} />)
             }
           </ul>
         </div>
