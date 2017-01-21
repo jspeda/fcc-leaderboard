@@ -32,14 +32,16 @@ class App extends Component {
   }
 
   render() {
+
     let choice = this.state.month ? this.state.users30 : this.state.usersAllTime;
+    
     return (
       <div className="App">
         <div className="App-header">
           <h2>freeCodeCamp Leaderboard</h2>
         </div>
         <button onClick={this.toggleMonth}><p className="App-intro">
-          view all-time
+          {this.state.month ? 'view all-time' : 'view last 30 days'}
         </p>
         </button>
         <div className="container">
